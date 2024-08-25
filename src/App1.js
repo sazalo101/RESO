@@ -40,16 +40,6 @@ const AnimatedBanner = styled(Paper)(({ theme }) => ({
   cursor: 'pointer',
 }));
 
-const BackgroundContainer = styled(Container)(({ theme }) => ({
-  backgroundImage: 'linear-gradient(120deg, #a6c0fe 0%, #f68084 100%)',
-  minHeight: '100vh',
-  padding: theme.spacing(4),
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  borderRadius: theme.spacing(1),
-}));
-
 function App() {
   const [resume, setResume] = useState(null);
   const [jobDescription, setJobDescription] = useState('');
@@ -88,7 +78,7 @@ function App() {
       });
       setResult({
         subject: response.data.emailSubject,
-        body: response.data.emailBody,
+        body: response.data.emailBody
       });
     } catch (err) {
       setError('Error uploading file or processing request.');
@@ -110,11 +100,11 @@ function App() {
   };
 
   return (
-    <BackgroundContainer maxWidth="md">
+    <Container maxWidth="md">
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
-          RESO - Resume Analyse + Feedback Tool
-        </Typography>
+          RESO - Resume -ANALYSE + FEEDBACK Tool
+         </Typography>
         <form onSubmit={handleSubmit}>
           <Fade in={true} timeout={1000}>
             <Box mb={2}>
@@ -220,7 +210,7 @@ function App() {
           <Button onClick={handleCloseDonateDialog}>Close</Button>
         </DialogActions>
       </Dialog>
-    </BackgroundContainer>
+    </Container>
   );
 }
 
