@@ -22,6 +22,13 @@ import {
 import { styled, keyframes } from '@mui/system';
 import { CloudUpload as CloudUploadIcon, MonetizationOn as MonetizationOnIcon } from '@mui/icons-material';
 
+// Product Hunt Badge
+const ProductHuntBadge = styled('a')({
+  display: 'block',
+  textAlign: 'center',
+  marginBottom: '20px',
+});
+
 const glowAnimation = keyframes`
   0% { box-shadow: 0 0 5px #00ff00; }
   50% { box-shadow: 0 0 20px #00ff00; }
@@ -45,6 +52,7 @@ const BackgroundContainer = styled(Container)(({ theme }) => ({
   minHeight: '100vh',
   padding: theme.spacing(4),
   display: 'flex',
+  flexDirection: 'column', // Adjusting layout for Product Hunt Badge
   justifyContent: 'center',
   alignItems: 'center',
   borderRadius: theme.spacing(1),
@@ -111,6 +119,9 @@ function App() {
 
   return (
     <BackgroundContainer maxWidth="md">
+      <ProductHuntBadge href="https://www.producthunt.com/posts/reso-ai?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-reso&#0045;ai" target="_blank">
+        <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=483487&theme=dark" alt="RESO AI - Instant Resume Insights, Effortlessly | Product Hunt" style={{ width: '250px', height: '54px' }} />
+      </ProductHuntBadge>
       <Box my={4}>
         <Typography variant="h4" component="h1" gutterBottom>
           RESO - Resume Analyse + Feedback Tool
